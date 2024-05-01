@@ -3,13 +3,14 @@ const express = require('express')
 const session = require('express-session')
 const path = require('path');
 const app = express()
-const port = 3002
+const port = 60010
 const Math = require('math');
 // const smtpTransport = require('./config/email');
 const db = require('./db/db');
 const sessionOption = require('./db/sessionOption');
 const bodyParser = require("body-parser");
-const bcrypt = require('bcrypt');
+// const bcrypt = require('bcrypt');
+const cors = require("cors")
 
 var MySQLStore = require('express-mysql-session')(session);
 var sessionStore = new MySQLStore(sessionOption);
@@ -43,5 +44,6 @@ app.get('/', (req, res) => {
 
 
 app.listen(port, () => {
-    console.log(`Example app listening at http://localhost:${port}`)
+	
+    console.log(`Example app listening at http://ceprj.gachon.ac.kr:${port}`)
 })
