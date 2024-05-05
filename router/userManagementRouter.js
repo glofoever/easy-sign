@@ -36,4 +36,8 @@ router.post('/findPw', (req, res) => {
     userManagements.findPw_process(req, res);
 });
 
+router.post('/sendEmail', (req, res) => {
+    userManagements.email_verification(req, res);
+});
+
 module.exports = router;
